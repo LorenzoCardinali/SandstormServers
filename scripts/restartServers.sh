@@ -30,6 +30,9 @@ done < $serversfile
 echo "[$(date)] : Checking for updates..." >> restartlog.txt
 ./inssserver update
 
+echo "[$(date)] : Updating Server files..." >> restartlog.txt
+./updateFiles.sh
+
 echo "[$(date)] : Starting servers..." >> restartlog.txt
 while read server_name
 do
