@@ -1,7 +1,7 @@
 # SandstormServers
 Common files and script for Sandstorm servers used in SPL and ICL community
 
-# Installing guide
+# installation guide
 1. Get in the main folder of the sandstorm server
 2. Execute this command:
 ```sh
