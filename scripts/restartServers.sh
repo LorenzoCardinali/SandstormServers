@@ -6,38 +6,43 @@
  ######  ###  ##  ##   ## ######  ###  ##       
 
 # path of the server folder
-SERVER_PATH="$(dirname "${BASH_SOURCE[0]}")"
+SERVER_PATH="$(dirname ${BASH_SOURCE[0]})"
 
 ## DO NOT TOUCH ANYTHING BELOW THIS LINE! ##
 
 cd $SERVER_PATH || exit 1
 serversfile=servers
 
-echo "[$(date)] : Restarting servers..." >> restartlog.txt
+logWithDate "Restarting servers..."
 
 if ! [ -f $serversfile ]
 then
-	echo "[$(date)] : ERROR: Missing servers list" >> restartlog.txt
+	logWithDate "ERROR: Missing servers list"
 	exit
 fi
 
-echo "[$(date)] : Stopping Servers..." >> restartlog.txt
+logWithDate "Stopping Servers..."
 while read server_name
 do
 	./$server_name stop
 done < $serversfile
 
-echo "[$(date)] : Checking for updates..." >> restartlog.txt
+logWithDate "Checking for updates..."
 ./inssserver update
 
-echo "[$(date)] : Updating Server files..." >> restartlog.txt
+logWithDate "Updating Server files..."
 ./updateFiles.sh
 
-echo "[$(date)] : Starting servers..." >> restartlog.txt
+logWithDate "Starting servers..."
 while read server_name
 do
 	./$server_name start
 done < $serversfile
 
-echo "[$(date)] : Servers restarted." >> restartlog.txt
+logWithDate "Servers restarted."
+
 echo "" >> restartlog.txt
+
+logWithDate () {
+	echo "[$(date)] : $1" >> restartlog.txt
+}
