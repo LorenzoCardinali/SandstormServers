@@ -10,6 +10,10 @@ SERVER_PATH="$(dirname ${BASH_SOURCE[0]})"
 
 ## DO NOT TOUCH ANYTHING BELOW THIS LINE! ##
 
+logWithDate () {
+	echo "[$(date)] : $1" >> restartlog.txt
+}
+
 cd $SERVER_PATH || exit 1
 serversfile=servers
 
@@ -42,7 +46,3 @@ done < $serversfile
 logWithDate "Servers restarted."
 
 echo "" >> restartlog.txt
-
-logWithDate () {
-	echo "[$(date)] : $1" >> restartlog.txt
-}
