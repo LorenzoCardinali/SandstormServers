@@ -1,0 +1,3 @@
+Rust?Scenario=Scenario_Rust_Team_Deathmatch
+Scenario_Rust_Team_Deathmatch
+(Scenario="Scenario_Rust_Team_Deathmatch",Lighting="Day")
