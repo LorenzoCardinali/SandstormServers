@@ -24,7 +24,7 @@ mv -f $TMP_PATH/scripts/* $SERVER_PATH
 chmod +x *.sh 
 
 # update Admins.txt
-mv -f $TMP_PATH/configs/Admins.txt $CONFIG_PATH
+mv -f $TMP_PATH/files/Admins.txt $CONFIG_PATH
 
 # delete temp directory
 rm -rf $TMP_PATH
