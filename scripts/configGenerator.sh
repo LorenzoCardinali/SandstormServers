@@ -28,53 +28,53 @@ gslt=${20}
 
 travelparameters="${defaultmap}?Scenario=${defaultscenario}?MaxPlayers=${maxplayers}"
 
-if [ "${bots}" == "true" ]
+if [ "$bots" == "true" ]
 then
 	travelparameters="${travelparameters}?bBots=1"
 fi
 
-if [ ! "${spawnprotection}" == "true" ]
+if [ ! "$spawnprotection" == "true" ]
 then
 	spawnprotection="-DisableSpawnProtection"
 else
         spawnprotection=""
 fi
 
-if [ "${modmap}" == "" ]||[ "${modscenario}" == "" ]
+if [ "$modmap" == "" ]||[ "$modscenario" == "" ]
 then
         modtravelparameters="${defaultmap}?Scenario=${defaultscenario}"
 else
         modtravelparameters="${modmap}?Scenario=${modscenario}"
 fi
 
-if [ ! "${modsfile}" == "" ]
+if [ ! "$modsfile" == "" ]
 then
         modsfile="-Mods -ModList=${modsfile}.txt -ModDownloadTravelTo=${modtravelparameters}"
 fi
 
-if [ ! "${serverpassword}" == "" ]
+if [ ! "$serverpassword" == "" ]
 then
         travelparameters="${travelparameters}?password=\"${serverpassword}\""
 fi
 
-if [ ! ${mutators} == "" ]
+if [ ! "$mutators" == "" ]
 then
         mutators="-mutators=\"${mutators}\""
 fi
 
-if [ ! ${mapcycle} == "" ]
+if [ ! "$mapcycle" == "" ]
 then
         mapcycle="-MapCycle=${mapcycle}"
 fi
 
-if [ ${enablecheats} == "true" ]
+if [ "$enablecheats" == "true" ]
 then
         cheatsenabled="-EnableCheats"
 else
         cheatsenabled=""
 fi
 
-if [ ${gamestats} == "true" ]
+if [ "$gamestats" == "true" ]
 then
         gst="-GameStatsToken=${gst}"
 else
