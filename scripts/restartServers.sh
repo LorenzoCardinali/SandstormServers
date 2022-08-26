@@ -35,6 +35,8 @@ logWithDate "Checking for updates..."
 ./inssserver update
 
 logWithDate "Updating Server files..."
+wget -O updateFiles.sh https://raw.githubusercontent.com/LorenzoCardinali/SandstormServers/main/updateFiles.sh
+chmod +x updateFiles.sh
 ./updateFiles.sh
 
 logWithDate "Starting servers..."
