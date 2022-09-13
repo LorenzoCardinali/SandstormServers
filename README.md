@@ -4,11 +4,11 @@ Common files and script for Sandstorm servers used in SPL and ICL community
 # How to make a server from scratch (Debian 11)
 1. Install the needed packages:
 ```sh
-sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 git htop distro-info libsdl2-2.0-0:i386; apt autoremove
+sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 git htop distro-info libsdl2-2.0-0:i386; sudo apt autoremove
 ```
 2. Open ports needed for the server:
 ```sh
-sudo ufw allow 27102:27105/udp && sudo ufw allow 27131:27134/udp && sudo ufw allow 27015:27018/tcp
+sudo ufw enable && sudo ufw allow ssh && sudo ufw allow 27102:27105/udp && sudo ufw allow 27131:27134/udp && sudo ufw allow 27015:27018/tcp
 ```
 3. Add a new user and login into it (optional):
 ```sh
