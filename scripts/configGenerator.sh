@@ -18,13 +18,15 @@ bots=${10}
 spawnprotection=${11}
 mutators=${12}
 mapcycle=${13}
-modsfile=${14}
-modmap=${15}
-modscenario=${16}
-enablecheats=${17}
-gamestats=${18}
-gst=${19}
-gslt=${20}
+motdfile=${14}
+modsfile=${15}
+modmap=${16}
+modscenario=${17}
+enablecheats=${18}
+gamestats=${19}
+gst=${20}
+gslt=${21}
+otherparameters=${22}
 
 travelparameters="${defaultmap}?Scenario=${defaultscenario}?MaxPlayers=${maxplayers}"
 
@@ -64,7 +66,12 @@ fi
 
 if [ ! "$mapcycle" == "" ]
 then
-        mapcycle="-MapCycle=${mapcycle}"
+        mapcycle="-MapCycle=${mapcycle}.txt"
+fi
+
+if [ ! "$motdfile" == "" ]
+then
+        motdfile="-motd=${motdfile}"
 fi
 
 if [ "$enablecheats" == "true" ]
@@ -81,4 +88,4 @@ else
         gst=""
 fi
 
-echo "${travelparameters} -useksm -ksmmergeall -hostname=\"${servername}\" -Port=${port} -QueryPort=${queryport} -Rcon -RconPassword=\"${rconpassword}\" -RconListenPort=${rconport} -log -motd ${mutators} ${mapcycle} -GSLTToken=${gslt} ${gst} ${cheatsenabled} ${spawnprotection} ${modsfile}"
+echo "${travelparameters} -useksm -ksmmergeall -hostname=\"${servername}\" -Port=${port} -QueryPort=${queryport} -Rcon -RconPassword=\"${rconpassword}\" -RconListenPort=${rconport} -log ${mutators} ${mapcycle} ${motdfile} -GSLTToken=${gslt} ${gst} ${cheatsenabled} ${spawnprotection} ${modsfile} ${otherparameters}"
