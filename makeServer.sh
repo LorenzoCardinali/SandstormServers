@@ -1,9 +1,5 @@
 #!/bin/bash
-  ###### ######## ####### #######  ###  #######
-###           ##       ##      ## ###         
-###      #######  ######  ###  ## ###  #######
-###      ###  ##  ##  ##  ###  ## ###  ##     
- ######  ###  ##  ##   ## ######  ###  ##       
+# author Cardif      
 
 # path of the server folder
 SERVER_PATH=$(pwd)
@@ -27,7 +23,7 @@ fi
 wget -O linuxgsm.sh https://linuxgsm.sh > /dev/null 2>&1
 chmod +x linuxgsm.sh
 bash linuxgsm.sh inssserver > /dev/null 2>&1
-./inssserver install
+bash inssserver install
 
 ####################
 ### Server files ###
