@@ -6,7 +6,7 @@ Common files and script for Sandstorm servers used in SPL and SandstormItalia co
 ```sh
 sudo dpkg --add-architecture i386
 sudo apt update
-sudo apt install bc binutils bsdmainutils bzip2 ca-certificates cpio curl distro-info file gzip hostname jq lib32gcc-s1 lib32stdc++6 libsdl2-2.0-0:i386 netcat-openbsd pigz python3 tar tmux unzip util-linux uuid-runtime wget xz-utils -y
+sudo apt install bc binutils bsdmainutils bzip2 ca-certificates cpio curl distro-info file gzip hostname jq lib32gcc-s1 lib32stdc++6 libsdl2-2.0-0:i386 netcat-openbsd pigz python3 tar tmux git unzip util-linux uuid-runtime wget xz-utils -y
 sudo apt autoremove -y
 ```
 2. Open ports needed for the server (optional step)
