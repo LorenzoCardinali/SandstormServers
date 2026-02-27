@@ -47,7 +47,9 @@ fi
 
 if [ ! "$modsfile" == "" ]
 then
-        modsfile="-Mods -ModList=${modsfile}.txt -ModDownloadTravelTo=${modtravelparameters}"
+        modsfile="-Mods -ModDownloadTravelTo=${modtravelparameters}"
+        # TODO: add modlist support
+        #-ModList=${modsfile}.txt 
 fi
 
 if [ ! "$serverpassword" == "" ]
