@@ -47,7 +47,7 @@ fi
 
 if [ ! "$modsfile" == "" ]
 then
-        modsfile="-Mods -ModDownloadTravelTo=${modtravelparameters}"
+        modsfile="-Mods -ModDownloadTravelTo=${modtravelparameters}?MaxPlayers=\"${maxplayers}\"?password=\"${serverpassword}\""
         # TODO: add modlist support
         #-ModList=${modsfile}.txt 
 fi
@@ -86,4 +86,4 @@ else
         gst=""
 fi
 
-echo "${travelparameters} -useksm -ksmmergeall -hostname=\"${servername}\" -Port=${port} -QueryPort=${queryport} -SecurityCode=none -Rcon -RconPassword=\"${rconpassword}\" -RconListenPort=${rconport} -log ${mutators} ${mapcycle} ${motdfile} -GSLTToken=${gslt} ${gst} ${cheatsenabled} ${spawnprotection} ${modsfile} ${otherparameters}"
+echo "${travelparameters} -useksm -ksmmergeall -hostname=\"${servername}\" -SecurityCode=none -Port=${port} -QueryPort=${queryport} -Rcon -RconPassword=\"${rconpassword}\" -RconListenPort=${rconport} -log ${mutators} ${mapcycle} ${motdfile} -GSLTToken=${gslt} ${gst} ${cheatsenabled} ${spawnprotection} ${modsfile} ${otherparameters}"
