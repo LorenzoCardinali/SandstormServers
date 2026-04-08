@@ -32,7 +32,7 @@ logWithDate "Checking for updates..."
 bash inssserver update
 
 logWithDate "Updating Server files..."
-(curl https://raw.githubusercontent.com/LorenzoCardinali/SandstormServers/main/updateFiles.sh > updateFiles.sh) > /dev/null 2>&1
+$(curl https://raw.githubusercontent.com/LorenzoCardinali/SandstormServers/main/updateFiles.sh > updateFiles.sh) > /dev/null 2>&1
 chmod +x updateFiles.sh
 bash updateFiles.sh
 
